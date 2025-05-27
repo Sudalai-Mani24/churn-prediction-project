@@ -4,6 +4,7 @@ SHAP BASED RETENTION STRATEGIES INSIGHTS:
 The SHAP summary plot and feature impact analysis provide deep insights into the key drivers of churn behavior in the user base. The following retention strategies are grounded in these interpretable machine learning insights:
 
 TOP FEATURES INFLUENCING CHURN (Based on SHAP Values)
+
 *Churn Risk Score
 Observation: Higher churn risk scores are the most significant contributors to churn.
 Strategy: Proactively target users with high churn risk scores using personalized retention campaigns (e.g., loyalty rewards, special offers, or customer satisfaction surveys).
@@ -32,12 +33,13 @@ Strategy: Offer exclusive perks (e.g., discounts, anniversary gifts, or early ac
 Observation: Higher weekly watch time reduces churn risk.
 Strategy: Provide tailored watchlists, binge-worthy content series, or interactive content to keep users invested for longer durations each week.
 
-👤 Age Group Dynamics
+AGE GROUP DYNAMICS
 *Users < 30 Years:
 Insight: Higher SHAP values → greater churn risk.
 Strategy: This age group may be less brand-loyal. Engage them with dynamic content, student discounts, and social sharing features to increase stickiness.
 
 *Users Aged 35–45:
+
 Insight: SHAP values approach zero → churn risk stabilizes.
 Strategy: Maintain retention through value consistency, family content, or bundled service options (e.g., multiple screens).
 
