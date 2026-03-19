@@ -1,297 +1,125 @@
-🔮 STREAMSAGE — Churn Prediction for Streaming Platforms
-📌 Overview
+# 🔮 STREAMSAGE — Churn Prediction for Streaming Platforms
 
-STREAMSAGE is a machine learning-powered web application that predicts customer churn for small-to-mid-sized streaming platforms. Built using Streamlit and CatBoost, it allows users to upload customer data and instantly receive churn predictions along with personalized retention strategies.
+## 📌 Overview
+**STREAMSAGE** is a machine learning-powered web application that predicts customer churn for small-to-mid-sized streaming platforms. Built using **Streamlit** and **CatBoost**, it enables users to upload customer datasets and receive churn predictions along with actionable retention strategies.
 
-🎯 Objective
+---
 
-Predict customers likely to churn
+## 🎯 Objectives
+- Predict customers likely to churn  
+- Enable data-driven retention strategies  
+- Provide an easy-to-use interface for non-technical users  
 
-Support data-driven retention strategies
+---
 
-Provide a simple interface for non-technical users
+## ⚙️ Tech Stack
+- **Frontend:** Streamlit  
+- **Backend:** Python  
+- **ML Model:** CatBoostClassifier  
+- **Libraries:** pandas, numpy, scikit-learn, imbalanced-learn  
 
-⚙️ Tech Stack
+---
 
-Frontend: Streamlit
+## 🚀 Key Features
+- 📂 Upload CSV file for predictions  
+- 🧠 Automatic feature engineering (handles missing engineered features)  
+- 🔍 Optimized churn prediction (threshold = 0.3)  
+- 💡 Personalized retention recommendations  
+- 📊 Interactive data preview  
+- 📥 Download predictions as CSV  
+- 🎨 Clean dark-themed UI  
 
-Backend: Python
+---
 
-ML Model: CatBoostClassifier
+## 📊 Model Performance
+| Metric        | Score |
+|--------------|------|
+| Accuracy     | ~85% |
+| Precision    | ~46% |
+| Recall       | ~77% |
+| F1 Score     | ~58% |
+| ROC-AUC      | ~82% |
 
-Libraries: pandas, numpy, scikit-learn, imbalanced-learn
+> ⚠️ Threshold set to **0.3** to prioritize high recall and reduce missed churn cases.
 
-🚀 Key Features
+---
 
-📂 Upload CSV file for prediction
+## 📁 Input Requirements
 
-🧠 Automatic feature engineering (fills missing engineered features)
+### Required Columns
+- `gender`
+- `age`
+- `no_of_days_subscribed`
+- `weekly_mins_watched`
+- `minimum_daily_mins`
+- `maximum_daily_mins`
+- `weekly_max_night_mins`
+- `videos_watched`
+- `maximum_days_inactive`
+- `customer_support_calls`
+- `multi_screen`
+- `mail_subscribed`
 
-🔍 Churn prediction using optimized threshold (0.3)
+> ⚠️ Missing engineered features will be automatically generated.
 
-💡 Personalized retention recommendations
+---
 
-📊 Interactive data preview
+## 🧠 Feature Engineering
+The system dynamically generates the following features:
 
-📥 Download predictions as CSV
+- **subscription_tenure** → normalized subscription duration  
+- **engagement_score** → user activity level  
+- **consistency_score** → usage consistency  
+- **night_owl_score** → late-night viewing behavior  
+- **churn_risk_score** → combines inactivity & support calls  
+- **multi_screen_score** → multi-device usage  
+- **email_marketing_score** → email engagement  
 
-🎨 Clean dark-themed UI
+---
 
-📊 Model Performance
+## 🤖 Model Details
+- Algorithm: **CatBoostClassifier**  
+- Handles categorical features efficiently  
+- Performs well on small datasets (~2500 records)  
+- Threshold tuning applied for business optimization  
 
-Accuracy: ~85%
+---
 
-Precision: ~46%
+## 🔄 Workflow
+1. Upload CSV dataset  
+2. Data preprocessing & encoding  
+3. Feature engineering (auto-generated if missing)  
+4. Churn probability prediction  
+5. Apply threshold (0.3)  
+6. Generate retention recommendations  
+7. View & download results  
 
-Recall: ~77%
+---
 
-F1 Score: ~58%
+## 💡 Business Impact
+- Identifies high-risk customers early  
+- Enables targeted retention strategies  
+- Useful for startups without dedicated data science teams  
 
-ROC-AUC: ~82%
+---
 
-Threshold = 0.3 chosen to prioritize high recall and minimize missed churners.
+## ⚠️ Limitations
+- Trained on a relatively small dataset  
+- Rule-based recommendation system  
+- Not deployed (runs locally via Streamlit)  
 
-📁 Required Input Columns
-gender
-age
-no_of_days_subscribed
-weekly_mins_watched
-minimum_daily_mins
-maximum_daily_mins
-weekly_max_night_mins
-videos_watched
-maximum_days_inactive
-customer_support_calls
-multi_screen
-mail_subscribed
+---
 
-⚠️ Engineered features will be automatically calculated if missing or empty.
+## 🔮 Future Improvements
+- Integrate real-time streaming data  
+- Deploy as a cloud-based API  
+- AI-driven recommendation engine  
+- Explore deep learning models (e.g., BERT)  
 
-🧠 Feature Engineering
+---
 
-The following features are dynamically generated:
+## ▶️ How to Run Locally
 
-subscription_tenure → normalized subscription duration
-
-engagement_score → user activity level (Min-Max scaling)
-
-consistency_score → usage consistency
-
-night_owl_score → late-night viewing behavior
-
-churn_risk_score → combines support calls & low engagement
-
-multi_screen_score → multi-device usage
-
-email_marketing_score → email subscription indicator
-
-🤖 Model Details
-
-Algorithm: CatBoostClassifier
-
-Handles categorical features efficiently
-
-Performs well on small datasets (~2500 records)
-
-Threshold tuning used for business-driven optimization
-
-🔄 Workflow
-
-Upload CSV file
-
-Data preprocessing & encoding
-
-Feature engineering (auto-fill missing values)
-
-Churn probability prediction
-
-Apply threshold (0.3)
-
-Generate retention recommendations
-
-Display & download results
-
-💡 Business Impact
-
-Helps identify high-risk customers early
-
-Enables targeted retention strategies
-
-Useful for startups without data science teams
-
-⚠️ Limitations
-
-Trained on small dataset
-
-Rule-based recommendations
-
-Not deployed on cloud (local Streamlit app)
-
-🔮 Future Scope
-
-Integrate real-time streaming data
-
-Deploy as cloud API
-
-Improve recommendation engine using AI
-
-Add advanced models (BERT / deep learning)
-
-▶️ How to Run
+```bash
 pip install -r requirements.txt
 streamlit run app.py
-📌 Project Type
-
-Machine Learning + Data Analytics
-
-Intermediate-level Python project
-
-Academic + Portfolio Project🔮 STREAMSAGE — Churn Prediction for Streaming Platforms
-📌 Overview
-
-STREAMSAGE is a machine learning-powered web application that predicts customer churn for small-to-mid-sized streaming platforms. Built using Streamlit and CatBoost, it allows users to upload customer data and instantly receive churn predictions along with personalized retention strategies.
-
-🎯 Objective
-
-Predict customers likely to churn
-
-Support data-driven retention strategies
-
-Provide a simple interface for non-technical users
-
-⚙️ Tech Stack
-
-Frontend: Streamlit
-
-Backend: Python
-
-ML Model: CatBoostClassifier
-
-Libraries: pandas, numpy, scikit-learn, imbalanced-learn
-
-🚀 Key Features
-
-📂 Upload CSV file for prediction
-
-🧠 Automatic feature engineering (fills missing engineered features)
-
-🔍 Churn prediction using optimized threshold (0.3)
-
-💡 Personalized retention recommendations
-
-📊 Interactive data preview
-
-📥 Download predictions as CSV
-
-🎨 Clean dark-themed UI
-
-📊 Model Performance
-
-Accuracy: ~85%
-
-Precision: ~46%
-
-Recall: ~77%
-
-F1 Score: ~58%
-
-ROC-AUC: ~82%
-
-Threshold = 0.3 chosen to prioritize high recall and minimize missed churners.
-
-📁 Required Input Columns
-gender
-age
-no_of_days_subscribed
-weekly_mins_watched
-minimum_daily_mins
-maximum_daily_mins
-weekly_max_night_mins
-videos_watched
-maximum_days_inactive
-customer_support_calls
-multi_screen
-mail_subscribed
-
-⚠️ Engineered features will be automatically calculated if missing or empty.
-
-🧠 Feature Engineering
-
-The following features are dynamically generated:
-
-subscription_tenure → normalized subscription duration
-
-engagement_score → user activity level (Min-Max scaling)
-
-consistency_score → usage consistency
-
-night_owl_score → late-night viewing behavior
-
-churn_risk_score → combines support calls & low engagement
-
-multi_screen_score → multi-device usage
-
-email_marketing_score → email subscription indicator
-
-🤖 Model Details
-
-Algorithm: CatBoostClassifier
-
-Handles categorical features efficiently
-
-Performs well on small datasets (~2500 records)
-
-Threshold tuning used for business-driven optimization
-
-🔄 Workflow
-
-Upload CSV file
-
-Data preprocessing & encoding
-
-Feature engineering (auto-fill missing values)
-
-Churn probability prediction
-
-Apply threshold (0.3)
-
-Generate retention recommendations
-
-Display & download results
-
-💡 Business Impact
-
-Helps identify high-risk customers early
-
-Enables targeted retention strategies
-
-Useful for startups without data science teams
-
-⚠️ Limitations
-
-Trained on small dataset
-
-Rule-based recommendations
-
-Not deployed on cloud (local Streamlit app)
-
-🔮 Future Scope
-
-Integrate real-time streaming data
-
-Deploy as cloud API
-
-Improve recommendation engine using AI
-
-Add advanced models (BERT / deep learning)
-
-▶️ How to Run
-pip install -r requirements.txt
-streamlit run app.py
-📌 Project Type
-
-Machine Learning + Data Analytics
-
-Intermediate-level Python project
-
-Academic + Portfolio Project
